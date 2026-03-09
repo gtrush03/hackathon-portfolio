@@ -29,6 +29,8 @@ export interface ProductData {
   };
   statusLabel?: string;
   statusValue?: string;
+  imageScale?: number;
+  imagePosition?: string;
   features: FeatureMetric[];
 }
 
@@ -135,7 +137,8 @@ const ProductVisual = ({ data, isLeft }: { data: ProductData; isLeft: boolean })
             initial="initial"
             animate="animate"
             exit="exit"
-            className="w-full h-full object-cover rounded-full drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] p-4"
+            className="w-full h-full object-cover rounded-full drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+            style={{ objectPosition: data.imagePosition || 'center 25%', transform: `scale(${data.imageScale || 1})` }}
             draggable={false}
           />
         </AnimatePresence>
