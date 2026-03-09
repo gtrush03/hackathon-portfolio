@@ -182,14 +182,43 @@ export default function FeaturedWork() {
         </div>
       </div>
 
-      {/* Era showcase — auto-rotates */}
-      <SpatialProductShowcase
-        products={eraShowcases}
-        className="bg-transparent"
-        activeIndex={showcaseIndex}
-        onToggle={handleShowcaseToggle}
-        hideSwitcher
-      />
+      {/* Era showcase — auto-rotates with manual arrows */}
+      <div className="relative group">
+        <SpatialProductShowcase
+          products={eraShowcases}
+          className="bg-transparent"
+          activeIndex={showcaseIndex}
+          onToggle={handleShowcaseToggle}
+          hideSwitcher
+        />
+        {/* Left arrow */}
+        <button
+          onClick={() => { setShowcaseIndex((p) => (p - 1 + 3) % 3); setAutoPlay(false); setTimeout(() => setAutoPlay(true), 8000) }}
+          className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/[0.06] backdrop-blur-sm border border-white/[0.08] flex items-center justify-center text-white/40 hover:text-white/80 hover:bg-white/[0.12] transition-all opacity-0 group-hover:opacity-100"
+          aria-label="Previous era"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        {/* Right arrow */}
+        <button
+          onClick={() => { setShowcaseIndex((p) => (p + 1) % 3); setAutoPlay(false); setTimeout(() => setAutoPlay(true), 8000) }}
+          className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/[0.06] backdrop-blur-sm border border-white/[0.08] flex items-center justify-center text-white/40 hover:text-white/80 hover:bg-white/[0.12] transition-all opacity-0 group-hover:opacity-100"
+          aria-label="Next era"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+        {/* Dot indicators */}
+        <div className="flex justify-center gap-2 -mt-4 pb-4">
+          {eraShowcases.map((era, i) => (
+            <button
+              key={era.id}
+              onClick={() => { setShowcaseIndex(i); setAutoPlay(false); setTimeout(() => setAutoPlay(true), 8000) }}
+              className={`w-1.5 h-1.5 rounded-full transition-all ${i === showcaseIndex ? 'bg-[#928466] w-6' : 'bg-white/20 hover:bg-white/40'}`}
+              aria-label={era.label}
+            />
+          ))}
+        </div>
+      </div>
 
       {/* Sticky nav */}
       <AnimatePresence>
