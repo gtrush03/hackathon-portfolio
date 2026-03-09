@@ -107,7 +107,7 @@ export default function Hero() {
         <motion.div variants={lineExpand} className="w-12 h-px bg-[#928466] mx-auto mb-10 origin-center" />
 
         {/* Name — letter by letter reveal */}
-        <h1 className="text-[2.1rem] md:text-7xl font-bold tracking-tight leading-[0.95] mb-8">
+        <h1 className="text-[2.1rem] md:text-7xl font-bold tracking-tight leading-[1.15] mb-8">
           <span className="font-light inline-flex flex-wrap justify-center">
             {name.split('').map((char, i) => (
               <motion.span
