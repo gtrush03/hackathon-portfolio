@@ -72,10 +72,10 @@ const lineExpand = {
 }
 
 const letterReveal = {
-  hidden: { opacity: 0, y: 40, rotateX: 40 },
+  hidden: { opacity: 0, y: 20 },
   show: (i: number) => ({
-    opacity: 1, y: 0, rotateX: 0,
-    transition: { duration: 0.6, delay: 0.5 + i * 0.03, ease: [0.22, 1, 0.36, 1] as const },
+    opacity: 1, y: 0,
+    transition: { duration: 0.5, delay: 0.5 + i * 0.03, ease: [0.22, 1, 0.36, 1] as const },
   }),
 }
 
@@ -87,7 +87,7 @@ export default function Hero() {
   const tagline = 'Builds AI That Ships'
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center items-center px-6 pt-24 pb-16 overflow-hidden grid-bg">
+    <section className="relative min-h-screen flex flex-col justify-center items-center px-6 pt-24 pb-16 overflow-x-hidden grid-bg">
       {/* Minimal ambient glow — no spotlight, just a soft radial */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
@@ -107,15 +107,15 @@ export default function Hero() {
         <motion.div variants={lineExpand} className="w-12 h-px bg-[#928466] mx-auto mb-10 origin-center" />
 
         {/* Name — letter by letter reveal */}
-        <h1 className="text-[2.1rem] md:text-7xl font-bold tracking-tight leading-[0.95] mb-8" style={{ perspective: '600px' }}>
-          <span className="font-light inline-flex flex-wrap justify-center overflow-hidden">
+        <h1 className="text-[2.1rem] md:text-7xl font-bold tracking-tight leading-[0.95] mb-8">
+          <span className="font-light inline-flex flex-wrap justify-center">
             {name.split('').map((char, i) => (
               <motion.span
                 key={i}
                 custom={i}
                 variants={letterReveal}
                 className="inline-block"
-                style={{ transformOrigin: 'bottom center' }}
+                style={{ display: 'inline-block' }}
               >
                 {char === ' ' ? '\u00A0' : char}
               </motion.span>
