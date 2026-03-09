@@ -1313,6 +1313,7 @@ export default function Projects() {
       <div className="max-w-6xl mx-auto">
         <SectionHeading />
 
+        <div id="era-now" className="scroll-mt-24" />
         <CategoryHeading label="Products" />
 
         {/* Row 1: SynthOS — flagship, full width with preview */}
@@ -1356,6 +1357,7 @@ export default function Projects() {
           </a>
         </div>
 
+        <div id="era-building" className="scroll-mt-24" />
         <LegacyHeading />
         <div className="mb-4">
           <GoogleCard />
@@ -1366,6 +1368,7 @@ export default function Projects() {
           ))}
         </div>
 
+        <div id="era-early" className="scroll-mt-24" />
         <FoundationsHeading />
         <FoundationsCards />
       </div>
