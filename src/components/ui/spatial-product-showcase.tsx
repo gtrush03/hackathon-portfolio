@@ -145,16 +145,14 @@ const ProductVisual = ({ data, isLeft }: { data: ProductData; isLeft: boolean })
   </motion.div>
 );
 
-const ProductDetails = ({ data, isLeft }: { data: ProductData; isLeft: boolean }) => {
-  const alignClass = isLeft ? 'md:items-start md:text-left items-center text-center' : 'md:items-end md:text-right items-center text-center';
-
+const ProductDetails = ({ data }: { data: ProductData; isLeft: boolean }) => {
   return (
     <motion.div
       variants={ANIMATIONS.container}
       initial="hidden"
       animate="visible"
       exit="exit"
-      className={`flex flex-col ${alignClass}`}
+      className="flex flex-col items-center text-center"
     >
       <motion.p variants={ANIMATIONS.item} className="text-xs uppercase tracking-[0.25em] text-[#928466] mb-3">
         {data.label}
@@ -164,15 +162,15 @@ const ProductDetails = ({ data, isLeft }: { data: ProductData; isLeft: boolean }
           {data.title}
         </span>
       </motion.h2>
-      <motion.p variants={ANIMATIONS.item} className={`text-white/40 text-sm mb-6 max-w-sm leading-relaxed ${isLeft ? 'md:mr-auto' : 'md:ml-auto'} mx-auto md:mx-0`}>
+      <motion.p variants={ANIMATIONS.item} className="text-white/40 text-sm mb-8 max-w-sm leading-relaxed mx-auto">
         {data.description}
       </motion.p>
 
-      <motion.div variants={ANIMATIONS.item} className="w-full flex gap-6 md:gap-8">
+      <motion.div variants={ANIMATIONS.item} className="flex justify-center gap-6 md:gap-10">
         {data.features.map((feature) => (
-          <div key={feature.label} className="flex flex-col">
-            <span className="text-xl md:text-2xl font-semibold text-white tracking-tight">{feature.value}</span>
-            <span className="text-[11px] md:text-xs text-white/35 mt-0.5">{feature.label}</span>
+          <div key={feature.label} className="flex flex-col items-center min-w-[72px]">
+            <span className="text-2xl md:text-3xl font-bold text-white">{feature.value}</span>
+            <span className="text-[10px] md:text-[11px] text-white/30 mt-1.5 uppercase tracking-widest">{feature.label}</span>
           </div>
         ))}
       </motion.div>
