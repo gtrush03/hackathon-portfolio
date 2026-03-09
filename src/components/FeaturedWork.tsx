@@ -13,8 +13,7 @@ const allProjects: PreviewCard[] = [
   { id: 'truspend', title: 'TRU Spend', description: 'Ontology-backed SaaS spend intelligence that finds hidden software waste', imageSrc: '/screenshots/truspend-preview.png', href: 'https://spend.trusynth.com', tags: ['React', 'Supabase', 'Claude API'] },
   { id: 'trusales', title: 'TruSales CRM', description: 'Agent-first sales platform — AI runs your pipeline end-to-end', imageSrc: '/screenshots/trusales-preview.png', href: 'https://sales.trusynth.com', tags: ['React', 'Supabase', 'Zustand'] },
   { id: 'robotics', title: 'Robotics P&P', description: 'LLM-managed robotic manipulation with Gemini vision in the browser', imageSrc: '/screenshots/robotics/preview.png', tags: ['Three.js', 'MuJoCo', 'Gemini'] },
-  { id: 'x-agent', title: 'X Engagement Agent', description: 'Twitter on autopilot — Claude crafts contextual replies, avoids AI detection', imageSrc: '/screenshots/synthos-preview.png', tags: ['Python', 'Selenium', 'Claude CLI'] },
-  { id: 'ghost-treasury', title: 'Ghost Treasury', description: 'Hackathon DAO on Monad — autonomous trading agent with on-chain treasury', imageSrc: '/screenshots/synthos-preview.png', tags: ['Viem', 'Unlink SDK', 'Claude'] },
+  { id: 'openclaw', title: 'OpenClaw', description: 'Hackathon winner — AI-powered legal document analysis and contract review platform', imageSrc: '/screenshots/openclaw-preview.png', tags: ['React', 'Claude API', 'Python'] },
   { id: 'ponic', title: 'Ponic.cz', description: 'Pioneered accessible hydroponics — custom 3D-printed modular systems', imageSrc: '/screenshots/ponic.jpg', tags: ['3D Printing', 'IoT', 'E-commerce'] },
   { id: 'content-moderation', title: 'Content Moderation', description: 'AI content moderation system for platform safety', imageSrc: '/videos/tru-content-moderation-thumb.jpg', tags: ['Python', 'FastAPI', 'Claude'] },
 ]
