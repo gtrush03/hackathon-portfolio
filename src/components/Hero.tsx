@@ -58,24 +58,24 @@ const container = {
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30, filter: 'blur(8px)' },
-  show: { opacity: 1, y: 0, filter: 'blur(0px)', transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } },
+  show: { opacity: 1, y: 0, filter: 'blur(0px)', transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as const } },
 }
 
 const scaleFade = {
   hidden: { opacity: 0, scale: 0.92 },
-  show: { opacity: 1, scale: 1, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } },
+  show: { opacity: 1, scale: 1, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const } },
 }
 
 const lineExpand = {
   hidden: { scaleX: 0, opacity: 0 },
-  show: { scaleX: 1, opacity: 1, transition: { duration: 1, ease: [0.22, 1, 0.36, 1] } },
+  show: { scaleX: 1, opacity: 1, transition: { duration: 1, ease: [0.22, 1, 0.36, 1] as const } },
 }
 
 const letterReveal = {
   hidden: { opacity: 0, y: 40, rotateX: 40 },
   show: (i: number) => ({
     opacity: 1, y: 0, rotateX: 0,
-    transition: { duration: 0.6, delay: 0.5 + i * 0.03, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.6, delay: 0.5 + i * 0.03, ease: [0.22, 1, 0.36, 1] as const },
   }),
 }
 
