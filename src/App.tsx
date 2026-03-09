@@ -13,6 +13,9 @@ import ParallaxDivider from './components/ParallaxDivider'
 import LoadingScreen from './components/LoadingScreen'
 import TruSalesLanding from './pages/TruSalesLanding'
 import RoboticsLanding from './pages/RoboticsLanding'
+import FeaturedWork from './components/FeaturedWork'
+import Testimonials from './components/Testimonials'
+import JourneyMap from './components/JourneyMap'
 
 function HomePage() {
   return (
@@ -26,9 +29,18 @@ function HomePage() {
           <Hero />
         </FrameCanvas>
 
+        {/* Featured Work — Spatial Showcase (Products/Agents/Hardware) + Card Stack */}
+        <FeaturedWork />
+
         <div className="relative" style={{ contain: 'layout style paint' }}>
           <div className="section-fade-top" />
           <Projects />
+        </div>
+
+        {/* Twitter-style Testimonials */}
+        <div className="relative" style={{ contain: 'layout style paint' }}>
+          <div className="section-fade-top" />
+          <Testimonials />
         </div>
 
         <div className="relative" style={{ contain: 'layout style paint' }}>
@@ -37,6 +49,11 @@ function HomePage() {
         </div>
 
         <ParallaxDivider />
+
+        {/* World Map — animated journey connections */}
+        <div className="relative" style={{ contain: 'layout style paint' }}>
+          <JourneyMap />
+        </div>
 
         <div className="relative" style={{ contain: 'layout style paint' }}>
           <Journey />
